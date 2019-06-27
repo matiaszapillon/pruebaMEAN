@@ -1,0 +1,48 @@
+<div class="form-group">
+    <h4 class="">Detalles del Proyecto</h4>
+</div>
+<div *ngIf="currentProject">
+
+  <form method="post">
+    <div class="row">
+      <div class="form-group col-2">
+        <label>ID</label>
+        <input class="form-control" type="text" name="idProjectName" readonly>
+      </div>
+      <div class="form-group col">
+        <label> Descripcion </label>
+        <input class="form-control" type="text" name="descriptionName" readonly value="{{currentProject.description}}">
+      </div>
+      <div class="form-group col">
+        <label> Nombre del Proyecto </label>
+        <input class="form-control" type="text" name="nameName" readonly value="{{currentProject.name}}">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label>Cliente</label>
+        <input class="form-control" type="text" name="clientName" readonly>
+      </div>
+      <div class="form-group col">
+        <label>CUIT / CUIL</label>
+        <input class="form-control" type="text" name="CUIT_CUILName" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col">
+        <label>Estado proyecto</label>
+        <input class="form-control" type="text" name="stateName" readonly value="{{getState()}}">
+      </div>
+      <div class="form-group col">
+        <label>Etapa actual</label>
+        <input class="form-control" type="text" name="currentStageName" readonly>
+      </div>
+    </div>
+    <div class="form-group">
+     <!--    <a routerLink="/projectDetail/{{currentProject.id}}"> -->
+      <button type="submit" class="btn btn-outline-info"  name="detallesName">Detalles</button>
+      <button type="submit" class="btn btn-outline-danger float-right" name="btnDeleteProject" data-toggle="tooltip"
+        data-placement="left" title="Eliminar Proyecto" (click)="delete()">X</button>
+    </div>
+  </form>
+</div>

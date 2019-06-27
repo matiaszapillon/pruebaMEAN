@@ -1,0 +1,49 @@
+
+ 
+      <div class="card">
+        <div class="card-header">
+          Empleados
+        </div>
+        <div class="card-body">
+          <form #employeeForm="ngForm">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">Office</th>
+                  <th scope="col">Salary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of employeeService.employees">
+                  <th><input type="radio" name="selectedEmployee" id="{{emp._id}}" (click)="onSelectionChange(emp)" />
+                  </th>
+                  <th scope="row">{{emp._id}}</th>
+                  <td>{{emp.name}}</td>
+                  <td>{{emp.position}}</td>
+                  <td>{{emp.office}}</td>
+                  <td>{{emp.salary}}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <a routerLink="/registerEmployee">
+                <button type="submit" class="btn btn-success"> Nuevo</button>
+              </a>
+              <a routerLink="/registerEmployee">
+                <button type="submit" class="btn btn-primary float-right"> Editar</button>
+
+              </a>
+
+            </div>
+          </form>
+        </div>
+      </div>
+      <div *ngIf="employeeToEdit">
+
+        <h2>Edicion empleado</h2>
+        {{employeeToEdit.name}}
+      </div>

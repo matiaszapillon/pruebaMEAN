@@ -1,0 +1,54 @@
+
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        Crear/Actualizar empleado
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+
+
+        <form #registerEmployeeForm="ngForm" >
+          <div class="form-row">
+            <div class="form-group col-md-4 col-sm-6">
+              <input type="text" name="id" class="form-control" readonly placeholder="id" #id="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee._id">
+            </div>
+            <div class="form-group col-md-4 col-sm-6">
+              <input type="text" name="name" class="form-control" placeholder="name" #name="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.name">
+            </div>
+            <div class="form-group col-md-4 col-sm-12">
+              <input type="text" name="position" class="form-control" placeholder="position" #position="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.position">
+            </div>
+          </div>
+          <div class="form-row">
+
+            <div class="form-group col">
+              <input type="text" name="salary" class="form-control" placeholder="salary" #salary="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.salary">
+            </div>
+            <div class="form-group col">
+              <input type="text" name="office" class="form-control" placeholder="office" #office="ngModel"
+                [(ngModel)]="employeeService.selectedEmployee.office">
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-success " (click)="addEmployee(registerEmployeeForm)" >Guardar</button>
+            <button type="button" class="btn btn-info float-right" (click)="resetForm(registerEmployeeForm)">Clean</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="currentEmployee">
+      <h2>Edicion empleado</h2>
+      <div><span>id: </span>{{Employee.id}}</div>
+      <div>
+        <label>name:
+          <input  [(ngModel)]="currentEmployee.name" placeholder="name" />
+        </label>
+      </div>
+    
+    </div>    
+  </div>
