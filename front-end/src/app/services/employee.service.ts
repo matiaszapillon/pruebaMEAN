@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http' ;
 import { Employee } from '../models/employee';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,9 @@ export class EmployeeService {
    }
  //Aca estan los multiples metodos q vamos a reutilizar, entre las que estan hacer 
  //las consultas a todos los empleados
-    getEmployees(){
+    getEmployees(): Observable<Employee[]> {
     //Metodo que trae los empleados del servidor
-      return this.http.get(this.URL_API) ;     
+      return this.http.get<Employee[]>(this.URL_API) ;     
     }
   
     postEmployee(employee : Employee){

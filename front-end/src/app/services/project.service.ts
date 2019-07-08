@@ -16,7 +16,7 @@ export class ProjectService {
   }
 
 
-  getProjects() {
+  getProjects(): any {
 
     return this.http.get(this.URL_API);
   }

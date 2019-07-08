@@ -22,7 +22,7 @@ Una forma de hacerlo con promise. (CON EL ASYNC Y AWAIT ESTAMOS HACIENDO LO MISM
 };
 
 module.exports.CreateEmployee = async (req,res) => {
-
+console.log(req.body);
 let emp = new employeeModel(req.body);
 
 await emp.save(); 

@@ -37,6 +37,7 @@ app.use(cors());
 //module.exports=router
 app.use('/api/employees',require('./routes/employee.routes.js'));
 app.use('/api/projects',require('./routes/project.routes.js'));
+app.use('/api/users',require('./routes/user.routes.js'));
 
 //Server
 app.listen(app.get('port'),()=>{

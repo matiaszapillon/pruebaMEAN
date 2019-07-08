@@ -8,7 +8,7 @@ import { ProjectInformationComponent } from "./components/project-information/pr
 import { ProjectDetailComponent } from "./components/project-detail/project-detail.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
-import { AuthGuard } from './guard/auth-guard';
+import { AuthGuard} from "./guard/auth-guard";
 import { AuthGuardGuard } from './guard/auth-guard.guard';
 
 const routes: Routes = [
@@ -17,10 +17,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuardGuard]   
+    canActivate: [AuthGuard]   
   },
   {
-    path: 'home', component: HomeComponent, canActivate: [AuthGuardGuard],
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard],
     children: [
       { path: 'registerEmployee', component: RegisterEmployeeComponent,  },
       { path: 'employees', component: EmployeesComponent,  },

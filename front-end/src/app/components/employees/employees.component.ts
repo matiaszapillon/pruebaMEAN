@@ -26,7 +26,8 @@ export class EmployeesComponent implements OnInit {
     .subscribe(res => {
       this.employeeService.employees = res as Employee[] ;
       console.log(res);
-    });
+    },
+    err => console.error('Observer got an error: ' + err));
   }
 
   onSelectionChange(currentEmployee: Employee){
