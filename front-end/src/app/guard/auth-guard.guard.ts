@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/* import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
@@ -29,8 +29,9 @@ export class AuthGuardGuard implements CanActivate {
    /*  if (this.authService.isAuthenticated) { return false; }
     console.log('No se encuentra logueado, redireccion a login');
     this.router.navigate(['/login']);
-    return false; */
+    return false; 
   }
 }
 
 
+ */

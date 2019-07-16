@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component' ;
 import { ProjectInformationComponent } from './components/project-information/project-information.component';
 import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
 import { AuthGuard } from './guard/auth-guard';
+import { SuppliesDetailComponent } from './components/supplies-detail/supplies-detail.component';
+import { StagesDetailComponent } from './components/stages-detail/stages-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AuthGuard } from './guard/auth-guard';
     ProjectInformationComponent,
     LoginComponent,
     HomeComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    SuppliesDetailComponent,
+    StagesDetailComponent
   ],
   imports: [
     BrowserModule,

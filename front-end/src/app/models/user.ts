@@ -1,6 +1,7 @@
 export class User {
     email: string;
-    token: string;
+    accessToken: string;
     username: string;
-    expireIn: String;
+    expiresIn: String;
+
 }

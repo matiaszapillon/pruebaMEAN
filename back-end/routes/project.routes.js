@@ -7,6 +7,8 @@ const router = express.Router();
 //Tambien se podria habe hecho en el main.js "app.get(PATH,HANDLER) o app.put.."
 
 router.get('/', projCntrl.getProjects);
+router.get('/:id',projCntrl.getProjectById);
+router.get('/:id/supplies',projCntrl.getSuppliesByProject);
 
 /*
 

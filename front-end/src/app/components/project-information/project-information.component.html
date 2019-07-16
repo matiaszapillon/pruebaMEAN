@@ -1,5 +1,5 @@
 <div class="form-group">
-    <h4 class="">Detalles del Proyecto</h4>
+  <h4 class="">Detalles del Proyecto</h4>
 </div>
 <div *ngIf="currentProject">
 
@@ -39,8 +39,7 @@
       </div>
     </div>
     <div class="form-group">
-     <!--    <a routerLink="/projectDetail/{{currentProject.id}}"> -->
-      <button type="submit" class="btn btn-outline-info"  name="detallesName">Detalles</button>
+      <a routerLink="../projectDetail/{{currentProject._id}}"><button type="submit" class="btn btn-outline-info" name="detallesName">Detalles</button></a>
       <button type="submit" class="btn btn-outline-danger float-right" name="btnDeleteProject" data-toggle="tooltip"
         data-placement="left" title="Eliminar Proyecto" (click)="delete()">X</button>
     </div>

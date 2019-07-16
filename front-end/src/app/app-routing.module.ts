@@ -9,26 +9,25 @@ import { ProjectDetailComponent } from "./components/project-detail/project-deta
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
 import { AuthGuard} from "./guard/auth-guard";
-import { AuthGuardGuard } from './guard/auth-guard.guard';
+import { SuppliesDetailComponent } from './components/supplies-detail/supplies-detail.component';
+/* import { AuthGuardGuard } from './guard/auth-guard.guard'; */
 
 const routes: Routes = [
-  /*   { path: '', component: HomeComponent, canActivate: [AuthGuardGuard] }, */
-  { path: 'login', component: LoginComponent },
   {
     path: '',
     component: HomeComponent,
     canActivate: [AuthGuard]   
   },
+  { path: 'login', component: LoginComponent },
   {
     path: 'home', component: HomeComponent, canActivate: [AuthGuard],
     children: [
       { path: 'registerEmployee', component: RegisterEmployeeComponent,  },
       { path: 'employees', component: EmployeesComponent,  },
       { path: 'projects', component: ProjectsComponent  },
-      { path: 'projectDetail/:id', component: ProjectDetailComponent },
+      { path: 'projectDetail/:id', component: ProjectDetailComponent }
       ]
-  },
-
+  }
 ];
 
 @NgModule({

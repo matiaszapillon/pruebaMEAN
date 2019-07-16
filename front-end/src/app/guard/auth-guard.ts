@@ -19,18 +19,15 @@ export class AuthGuard implements CanActivate {
     console.log('AuthGuard#canActivate called');
     return this.checkLoggin();
   }
-  
+
   checkLoggin(): boolean {
-    if(this.authService.isAuthenticated()){
+    if (this.authService.isAuthenticated()) {
+      console.log("ESTA AUTENTICADO.");
       return true;
     }
     console.log('No se encuentra logueado, por favor logueese.');
     this.router.navigate(['/login']);
-    return false
-   /*  if (this.authService.isAuthenticated) { return false; }
-    console.log('No se encuentra logueado, redireccion a login');
-    this.router.navigate(['/login']);
-    return false; */
+    return false;
   }
 }
 

@@ -1,30 +1,32 @@
-<p>
-  project-detail works!
-</p>
-<div class="row">
+<div *ngIf="currentProject">
+  <div class="row">
     <div class="form-group col-2">
       <label> ID </label>
-      <input class="form-control" type="text" name="idProjectName" readonly="readonly" >
+      <input class="form-control" type="text" name="idProjectName" readonly="readonly" value="{{currentProject._id}}">
     </div>
     <div class="form-group col-2">
       <label> Nombre </label>
-      <input class="form-control" type="text" name="descriptionName" readonly="readonly" >
+      <input class="form-control" type="text" name="descriptionName" readonly="readonly"
+        value="{{currentProject.name}}">
     </div>
     <div class="form-group col">
       <label> Descripcion </label>
-      <input class="form-control" type="text" name="descriptionName" readonly="readonly" >
+      <input class="form-control" type="text" name="descriptionName" readonly="readonly"
+        value="{{currentProject.description}}">
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-auto">
+      <button (click)="showSupplies()" name="suppliesName" id="suppliesId" class="btn btn-primary form-group">Ver insumos</button>
+    </div>
+    <div class="col-auto">
+      <button (click)="showStages()" name="stagesButton" id="stagesButtonId" class="btn btn-primary form-group">Ver Etapas</button>
+    </div>
+  </div>
+
+  <supplies-detail [visible]="showSup" [project]="currentProject"></supplies-detail>
+  <stages-detail [visible]="showStag" [project]="currentProject"></stages-detail>
 
 
-<!-- 
-<div class="row">
-<div class="col-auto">
-  <button type="submit" name="suppliesName" id="suppliesId" class="btn btn-primary form-group" onclick = "setHiddenValue(this.id)">Ver insumos</button>
 </div>
-<div class="col-auto">
-  <button type="submit" name="stagesButton" id="stagesButtonId" class="btn btn-primary form-group" onclick = "setHiddenValue(this.id)">Ver Etapas</button>
-</div>
-</div>
- -->

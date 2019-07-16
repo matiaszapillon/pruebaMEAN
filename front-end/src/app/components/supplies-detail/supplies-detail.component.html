@@ -1,0 +1,85 @@
+<div *ngIf="visible">
+  <div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table">
+        Gestion de insumos
+      </i>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Cantidad</th>
+              <th>Unidad</th>
+              <th>Stock</th>
+              <th>Proveedor</th>
+              <th>Categoria Prov</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr *ngFor="let sup of project.supplies">
+              <td>
+                <input type="radio" name="radioSelectedSupply" value={{sup._id}} (click)="onSelectionChange(sup)">
+              </td>
+              <td>
+                {{sup.name}}
+              </td>
+              <td>
+                {{sup.description}}
+              </td>
+              <td>
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" name="{{sup._id}}" size="3" value="{{sup.quantity}}">
+                  </div>
+                  <div class="col">
+                    <button name="updateButton" id="updateButtonId"><img src="../../../assets/save.ico" height="25"
+                        width="20">
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td>
+                {{sup.unity}}
+              </td>
+              <td>
+                {{sup.stock}}
+              </td>
+              <td>
+                {{sup.provider.business_name}}
+              </td>
+              <td>
+                {{sup.provider.category}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Botones insumos -->
+    <div class="card-footer small text-muted">
+      <div class="row">
+        <div class="col-auto">
+          <button type="button" name="addSupplyName" (click)="navigateToSuppliesPage()" id="addSupplyId" class="btn btn-success">Agregar</button>
+        </div>
+
+        <div class="col-auto">
+          <button type="submit" name="deleteSupplyName" id="deleteSupplyId" class="btn btn-danger">Eliminar</button>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" name="calculateCostName" id="calculateCostId" class="btn btn-info float-right">Calcular
+            costo total</button>
+        </div>
+        <div class="col">
+          <input type="text" class="form-control float-right" name="costName" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
