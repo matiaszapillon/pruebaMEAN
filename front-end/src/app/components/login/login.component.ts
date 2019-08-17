@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: NgForm): void {
     console.log(form.value);
-
+    //INGRESAR con perro password: perro
     this.usrService.login(form.value).subscribe(res => {
       console.log(res);
       this.router.navigateByUrl('/home');

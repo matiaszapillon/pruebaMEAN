@@ -39,7 +39,8 @@ export class UserService {
       .pipe(tap(
         (res: User) => {
           if (res) {
-            console.log(res)
+            console.log(res);
+            console.log("test 1");
             this.setAuth(res);
           }
         }
@@ -48,6 +49,7 @@ export class UserService {
 
   setAuth(usr: User) {
     // Save JWT sent from server in localstorage
+    console.log("TEST");
     console.log(usr.accessToken,usr.expiresIn);
     this.jwtService.saveToken(usr.accessToken, usr.expiresIn);
     this.token = this.jwtService.getToken();
